@@ -1,0 +1,20 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>Alterego</th>
+        <th>Nome</th>
+        <th>Url</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vingador of vingadores">
+        <th scope="row">{{vingador.id}}</th>
+        <td>{{vingador.nome}}</td>
+        <td>{{vingador.pessoa}}</td>
+        <td>{{vingador.url}}</td>
+        <td> <button type="button" class="btn btn-warning">E</button></td>
+        <td> <button type="button" class="btn btn-danger">x</button></td>
+      </tr>
+    </tbody>
+  </table>
