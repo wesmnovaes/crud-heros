@@ -1,29 +1,30 @@
-<div class="container">
+<body>
+  <div class="container">
     
     <h2>Gerenciar lista</h2>
     <form #formCadastro="ngForm" (ngSubmit)="cadastrar()">
         <div class="form-group">
+            <label for="nome">id:</label>
+            <input type="text" class="form-control" id="id" name="id" [(ngModel)]="novo.id">
             <label for="nome">Alterego:</label>
             <input type="text" class="form-control" id="nome" name="nome" [(ngModel)]="novo.nome" required>
         </div>
         <div class="form-group">
             <label for="pessoa">Pessoa:</label>
             <input type="text" class="form-control" id="pessoa" name="pessoa" [(ngModel)]="novo.pessoa" required>
-            <label for="pessoa">Url:</label>
+            <label for="pessoa">Foto</label>
             <input type="text" class="form-control" id="url" name="url" [(ngModel)]="novo.url" required>
         </div>
         <button type="submit" class="btn btn-primary" [disabled]="!formCadastro.valid">Salvar</button>
-    </form>
-    
+    </form>    
 <br>
-
-<table class="table">
+<table class="table table-inverse">
     <thead>
       <tr>
         <th>id</th>
         <th>Alterego</th>
         <th>Nome</th>
-        <th>Url</th>
+        <th>Foto</th>
       </tr>
     </thead>
     <tbody>
@@ -31,10 +32,11 @@
         <th scope="row">{{vingador.id}}</th>
         <td>{{vingador.nome}}</td>
         <td>{{vingador.pessoa}}</td>
-        <td>{{vingador.url}}</td>
+        <td><img src="{{vingador.url}}" class="img" onerror="this.style.display='none'"></td> 
         <td> <button type="button" class="btn btn-warning" (click)="editar(vingador)">E</button></td>
-        <td> <button type="button" class="btn btn-danger" (click)="deletar(vingador)">x</button></td>
+        <td> <button type="button" class="btn btn-danger" (click)="deletar(vingador)">X</button></td>
       </tr>
     </tbody>
   </table>
 </div>
+</body>
